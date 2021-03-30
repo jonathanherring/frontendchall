@@ -34,6 +34,14 @@ app.get('/locations', (req, res) => res.send({ locations: app.locals.locations }
 
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
+app.post('/locations', (req, res) => {
+  const number = app.locals.locations.length + 1 
+  const newId = 'id'.concat(number.toString())
+  req.body.location['id'] = newId;
+  app.locals.locations.push(req.body.location)
+  res.send({locations: app.locals.locations})
+});
+
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });

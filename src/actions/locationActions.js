@@ -7,6 +7,34 @@ const storeAllLocations = (locations) => {
   };
 };
 
+// export const saveLocation = (location) => {
+//   return {
+//     type: 'SAVE_LOCATION',
+//     data: location
+//   }
+// }
+
+// export const saveLocation = (location) => {
+//   console.log('it called')
+//   return (dispatch) => {
+//     return fetch('/locations', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(location)
+//     })
+//     .then(locations => locations.json())
+//     .then(data => {
+//       console.log('Success:', data)
+//     .then(json => dispatch(storeAllLocations(json)));
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+//   };
+// };
+
 const fetchAllLocations = () => {
   return (dispatch) => {
     return fetch('/locations', {
@@ -19,5 +47,7 @@ const fetchAllLocations = () => {
       .then(json => dispatch(storeAllLocations(json)));
   };
 };
+
+
 
 export default fetchAllLocations;

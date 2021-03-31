@@ -13,7 +13,9 @@ const Locations = (state = initialState, action) => {
         data: state.data.concat(data),
       });
     case 'SAVE_LOCATION':
-      return console.log('clicked a button')
+      return Object.assign({}, state, {
+        data: state.data.concat(data),
+      });
     default:
       return state;
   }

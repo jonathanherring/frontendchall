@@ -31,11 +31,18 @@ class Form extends Component {
         </label>
         <button
           type="submit"
-          onClick={(e) => this.submitForm(e, {
+          onClick={(e) => {
+            //Can this logic be moved to the container?
+            const isValidLat = isFinite(this.lat.value) && Math.abs(this.lat.value) <= 90;
+            const isValidLon = isFinite(this.lng.value) && Math.abs(this.lng.value) <= 180;
+            const isValidName = this.name.value !== "";
+
+            if (isValidLat && isValidLon && isValidName){
+            this.submitForm(e, {
             name: this.name.value,
             lat: this.lat.value,
             lng: this.lng.value
-          })}
+          })}}}
         >
             Save
         </button>

@@ -27,7 +27,7 @@ const storeAllLocations = (locations) => {
 //     .then(locations => locations.json())
 //     .then(data => {
 //       console.log('Success:', data)
-//     .then(json => dispatch(storeAllLocations(json)));
+//     // .then(json => dispatch(storeAllLocations(json)));
 //     })
 //     .catch((error) => {
 //       console.error('Error:', error);

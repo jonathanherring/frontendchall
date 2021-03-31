@@ -7,11 +7,6 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-
-// const mapDispatchToProps = dispatch => {
-//   return bindActionCreators({ saveLocation }, dispatch);
-// };
-
 const mapDispatchToProps = (dispatch) => {
   return {
     saveLocation: (location) => {

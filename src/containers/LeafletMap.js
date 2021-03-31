@@ -15,6 +15,7 @@ class LeafletMap extends Component {
         <Map
           className="map"
           zoomControl={false}
+          //create action which updates this when new location is added
           center={[39.750809, -104.996810]}
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
